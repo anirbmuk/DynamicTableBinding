@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DynamicTableBindingAM"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="EmployeesVO1"
+    ViewObjectName="demo.anirbanm.binding.model.view.EmployeesVO"/>
+  <ViewUsage
+    Name="DepartmentsVO1"
+    ViewObjectName="demo.anirbanm.binding.model.view.DepartmentsVO"/>
+</AppModule>

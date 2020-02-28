@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
+             SeparateXMLFiles="false" Package="demo.anirbanm.binding.view" ClientType="Generic">
+  <pageMap>
+    <page path="/tablebinding.jspx" usageId="demo_anirbanm_binding_view_tablebindingPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="demo_anirbanm_binding_view_tablebindingPageDef"
+          path="demo.anirbanm.binding.view.pageDefs.tablebindingPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="DynamicTableBindingAMDataControl" Package="demo.anirbanm.binding.applicationModule"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="DynamicTableBindingAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

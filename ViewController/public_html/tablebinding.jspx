@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="Dynamic Table Binding" id="d1">
+            <af:form id="f1">
+                <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
+                    <f:facet name="center">
+                        <af:panelGroupLayout id="pgl1" layout="scroll" styleClass="AFStretchWidth">
+                            <af:spacer id="s1" height="10"/>
+                            <af:selectOneRadio label="Current Binding" value="#{viewScope.componentBean.currentBinding}"
+                                               valueChangeListener="#{viewScope.componentBean.onBindingChange}"
+                                               id="sor1" layout="horizontal" styleClass="AFStretchWidth"
+                                               autoSubmit="true">
+                                <af:selectItem label="Department" value="DepartmentsVO1" id="si1"/>
+                                <af:selectItem label="Employee" value="EmployeesVO1" id="si2"/>
+                            </af:selectOneRadio>
+                            <af:spacer id="s2" height="10"/>
+                            <af:panelCollection id="pc1" styleClass="AFStretchWidth" partialTriggers="::sor1">
+                                <af:table id="dc_t1" summary="ResultsTable" value="#{viewScope.componentBean.searchTableValue}"
+                                          styleClass="AFStretchWidth" var="row" autoHeightRows="10" emptyText="No data found">
+                                    <af:forEach items="#{viewScope.componentBean.attributeDefs}" var="def">
+                                        <af:column id="dc_c1" headerText="#{bindings[viewScope.componentBean.currentBinding].hints[def.name].label}"
+                                                   width="120">
+                                            <af:outputText id="dc_ot1" value="#{row.bindings[def.name].inputValue}"/>
+                                        </af:column>
+                                    </af:forEach>
+                                </af:table>
+                            </af:panelCollection>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="header">
+                        <af:activeOutputText value="Dynamic Table Binding Demo" id="aot1"/>
+                    </f:facet>
+                    <f:attribute name="headerGlobalSize" value="37"/>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>
