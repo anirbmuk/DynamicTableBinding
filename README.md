@@ -1,5 +1,5 @@
-# Dynamic table binding in Oracle ADF
+# Oracle ADF: Dynamic table binding in Oracle ADF
 Bind a table dynamically with view object through managed bean
 
-## Blog
-https://adfsolutions.anirbanblogs.com/2020/02/dynamic-table-binding-in-adf.html
+# Related Blog  
+https://adf-quintessentials.blogspot.com/2020/02/dynamic-table-binding-in-adf.html  
